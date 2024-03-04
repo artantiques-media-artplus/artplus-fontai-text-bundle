@@ -1,0 +1,21 @@
+services:
+    _defaults:
+        public: false
+
+    text.loader:
+        class: Fontai\Bundle\TextBundle\Loader\PdoLoader
+        tags:
+            - { name: translation.loader, alias: pdo }
+
+    text.twig_extension:
+        class: Fontai\Bundle\TextBundle\Twig\TextExtension
+        tags:
+            - { name: twig.extension }
+
+    Fontai\Bundle\TextBundle\EventSubscriber\TranslationReloadSubscriber:
+        tags:
+            - { name: kernel.event_subscriber }
+        arguments:
+            - '@filesystem'
+            - '%kernel.cache_dir%/translations'
+            - '%kernel.project_dir%/translations'

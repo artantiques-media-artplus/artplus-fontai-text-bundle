@@ -1,0 +1,21 @@
+{
+    "name": "fontai/text-bundle",
+    "type": "symfony-bundle",
+    "description": "Fontai TextBundle",
+    "authors": [
+        {
+            "name": "Lumír Toman",
+            "email": "toman@websource.cz"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": { "Fontai\\Bundle\\TextBundle\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev"
+}
